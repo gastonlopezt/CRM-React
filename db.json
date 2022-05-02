@@ -1,0 +1,36 @@
+{
+  "clientes": [
+    {
+      "nombre": "Gaston",
+      "empresa": "Empresa 123",
+      "email": "gaston_lopeztisera@hotmail.com",
+      "telefono": "381123123",
+      "notas": "Quiero comprar",
+      "id": 1
+    },
+    {
+      "nombre": "David",
+      "empresa": "Empresa 542",
+      "email": "gastonlt97@hotmail.com",
+      "telefono": "381123123412",
+      "notas": "Quiero comprar x2",
+      "id": 2
+    },
+    {
+      "nombre": "Valentina",
+      "empresa": "Empresa 12312",
+      "email": "vale@vale.com",
+      "telefono": "312321312",
+      "notas": "Quiero comprar x3",
+      "id": 3
+    },
+    {
+      "nombre": "Agostina",
+      "empresa": "empresa 321",
+      "email": "agos@agos.com",
+      "telefono": "3125435634643",
+      "notas": "Quiere productos x4",
+      "id": 4
+    }
+  ]
+}
