@@ -1,8 +1,25 @@
 import React from 'react'
 import {Formik, Form, Field} from 'formik'
+import * as Yup from 'yup'
+import Alerta from './Alerta';
 
 const Formulario = () => {
 
+  const nuevoClienteSchema = Yup.object().shape({
+    nombre: Yup.string()
+      .min(3, "El nombre es muy corto")
+      .max(20, "El nombre es muy largo")
+      .required("El nombre del Cliente es Obligatorio"),
+    empresa: Yup.string()
+    .required('El nombre de la empresa es obligatorio'),
+    email: Yup.string()
+    .email('Email no Válido')
+    .required('El email es Obligatorio'),
+    telefono: Yup.number()
+    .typeError('El número no es Válido')
+    .integer('Número no Válido')
+    .positive('Número no Válido')
+  });
 
   const handleSubmit = (valores) => {
     console.log(valores)
@@ -22,11 +39,12 @@ const Formulario = () => {
           telefono: "",
           notas: "",
         }}
-        onSubmit={ (values) => {
-          handleSubmit(values)
+        onSubmit={(values) => {
+          handleSubmit(values);
         }}
+        validationSchema={nuevoClienteSchema}
       >
-        {() => (
+        {({ errors, touched }) => (
           <Form className="mt-10 ">
             <div className="mb-4 ">
               <label className="text-gray-800 " htmlFor="nombre">
@@ -39,6 +57,9 @@ const Formulario = () => {
                 placeholder="nombre cliente"
                 name="nombre"
               />
+              {errors.nombre && touched.nombre ? (
+                <Alerta>{errors.nombre}</Alerta>
+              ) : null}
             </div>
             <div className="mb-4 ">
               <label className="text-gray-800 " htmlFor="empresa">
@@ -51,6 +72,9 @@ const Formulario = () => {
                 placeholder="Empresa del cliente"
                 name="empresa"
               />
+              {errors.empresa && touched.empresa ? (
+                <Alerta>{errors.empresa}</Alerta>
+              ) : null}
             </div>
             <div className="mb-4 ">
               <label className="text-gray-800 " htmlFor="email">
@@ -63,6 +87,9 @@ const Formulario = () => {
                 placeholder="Email del cliente"
                 name="email"
               />
+              {errors.email && touched.email ? (
+                <Alerta>{errors.email}</Alerta>
+              ) : null}
             </div>
             <div className="mb-4 ">
               <label className="text-gray-800 " htmlFor="telefono">
@@ -75,6 +102,9 @@ const Formulario = () => {
                 placeholder="Teléfono del cliente"
                 name="telefono"
               />
+              {errors.telefono && touched.telefono ? (
+                <Alerta>{errors.telefono}</Alerta>
+              ) : null}
             </div>
             <div className="mb-4 ">
               <label className="text-gray-800 " htmlFor="notas">
