@@ -31,6 +31,22 @@
       "telefono": "3125435634643",
       "notas": "Quiere productos x4",
       "id": 4
+    },
+    {
+      "nombre": "Federico",
+      "empresa": "Diseño SA",
+      "email": "federico@federico.com",
+      "telefono": "381456528563",
+      "notas": "",
+      "id": 5
+    },
+    {
+      "nombre": "Ricardo",
+      "empresa": "Construcciones",
+      "email": "ric@ric.com",
+      "telefono": "",
+      "notas": "",
+      "id": 6
     }
   ]
 }
