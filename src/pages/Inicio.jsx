@@ -21,6 +21,25 @@ const Inicio = () => {
     obtenerClientesAPI()
   }, [])
 
+  const handleEliminar = async id => {
+    const confirmar = confirm('¿Deseas eliminar este cliente?' )
+    //eliminar de la api
+    if(confirmar){
+      try {
+        const url = `http://localhost:4000/clientes/${id}`
+        const respuesta = await fetch(url, {
+          method: 'DELETE'
+        })
+        await respuesta.json()
+        //eliminar del state
+        const arrayClientes = clientes.filter( cliente => cliente.id !== id )
+        setClientes(arrayClientes)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+
 
   return (
     <>
@@ -40,6 +59,7 @@ const Inicio = () => {
               <Cliente 
                 key={cliente.id}
                 cliente={cliente}
+                handleEliminar={handleEliminar}
               />
             ))}
         </tbody>
