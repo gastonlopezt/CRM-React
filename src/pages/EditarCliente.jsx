@@ -18,7 +18,9 @@ const EditarCliente = () => {
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
         setCliente(resultado);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error)
+      }
       setCargando(!cargando);
     };
     obtenerClienteAPI();
@@ -31,9 +33,15 @@ const EditarCliente = () => {
       <p className=" mt-3 ">
         Utiliza este formulario para editar los datos de un cliente
       </p>
-      <Formulario 
-        cliente={cliente}
-      />
+
+      {cliente?.nombre ? (
+        <Formulario 
+          cliente={cliente}
+          cargando={cargando}
+        />
+
+      ) : <p>Cliente ID no válido</p>
+    }
     </>
   );
 }

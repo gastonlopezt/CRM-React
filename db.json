@@ -1,8 +1,8 @@
 {
   "clientes": [
     {
-      "nombre": "Gaston",
-      "empresa": "Empresa 123",
+      "nombre": "Gaston Nuevo",
+      "empresa": "Empresa 1234",
       "email": "gaston_lopeztisera@hotmail.com",
       "telefono": "381123123",
       "notas": "Quiero comprar",
@@ -17,7 +17,7 @@
       "id": 2
     },
     {
-      "nombre": "Valentina",
+      "nombre": "Valentina nuevo",
       "empresa": "Empresa 12312",
       "email": "vale@vale.com",
       "telefono": "312321312",
@@ -47,6 +47,22 @@
       "telefono": "",
       "notas": "",
       "id": 6
+    },
+    {
+      "nombre": "Nicolas",
+      "empresa": "Construcciones 12",
+      "email": "1@1.com",
+      "telefono": "12312412421",
+      "notas": "",
+      "id": 7
+    },
+    {
+      "nombre": "gaston lopez ti",
+      "empresa": "empresa 321",
+      "email": "gaston_lopeztisera@hotmail.com",
+      "telefono": "3125435634643",
+      "notas": "",
+      "id": 8
     }
   ]
 }

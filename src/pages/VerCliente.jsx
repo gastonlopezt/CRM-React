@@ -19,6 +19,7 @@ const VerCliente = () => {
         const resultado = await respuesta.json()
         setCliente(resultado)
       } catch(error) {
+        console.log(error)
       }
       setCargando(!cargando)
     }
