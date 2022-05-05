@@ -9,6 +9,7 @@ import VerCliente from "./pages/VerCliente";
 
 
 function App() {
+  
 
   return (
     <BrowserRouter>
